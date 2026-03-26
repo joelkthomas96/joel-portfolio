@@ -1,0 +1,22 @@
+# ============================================
+# .gitignore - Files NOT to upload to GitHub
+# ============================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Environment variables (KEEP SECRET!)
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Build outputs
+dist/
+build/
