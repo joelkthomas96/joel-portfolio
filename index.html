@@ -1068,7 +1068,8 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
   try {
     // UPDATE THIS URL after deploying backend on Render
-    const BACKEND_URL = 'https://your-backend.onrender.com/api/contact';
+const BACKEND_URL = 'https://joel-backend.onrender.com/api/contact';    
+console.log("Sending to:", BACKEND_URL);
     const res = await fetch(BACKEND_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
