@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Messages</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #1e293b;
+    }
+    tr:hover {
+      background: #1e293b;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>📨 Messages Inbox</h1>
+
+<table id="table">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Message</th>
+  </tr>
+</table>
+
+<script>
+const BACKEND = "https://joel-backend.onrender.com/api/contacts";
+
+async function loadMessages() {
+  const res = await fetch(BACKEND);
+  const data = await res.json();
+
+  const table = document.getElementById("table");
+
+  data.contacts.forEach(msg => {
+    const row = table.insertRow();
+
+    row.insertCell(0).innerText = msg.name;
+    row.insertCell(1).innerText = msg.email;
+    row.insertCell(2).innerText = msg.message;
+  });
+}
+
+loadMessages();
+</script>
+
+</body>
+</html>
